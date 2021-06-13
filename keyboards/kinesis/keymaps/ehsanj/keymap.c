@@ -1,5 +1,8 @@
 #include QMK_KEYBOARD_H
 
+#define _______     KC_TRNS
+#define XXXXXXX     KC_NO
+
 #define COLEMAK     0
 #define QWERTY      1
 #define FKEYS       2
@@ -12,7 +15,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [COLEMAK] = LAYOUT(
         // left hand
-        KC_ESC,             KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,              KC_F6,      KC_F7,      KC_F8,
+        KC_ESC,             KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,          KC_F6,      KC_F7,      KC_F8,
         TG(FKEYS),          KC_1,                   KC_2,                   KC_3,               KC_4,                   KC_5,
         KC_EQL,             KC_Q,                   KC_W,                   KC_F,               KC_P,                   KC_G,
         KC_GRV,             KC_A,                   KC_R,                   KC_S,               KC_T,                   KC_D,
@@ -24,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             LSFT_T(KC_BSPC),        LT(NUMPAD,KC_TAB),      LT(FN,KC_END),
 
         // right hand
-        KC_F9,              KC_F10,                 KC_F11,                 KC_F12,             KC_PSCR,                KC_SLCK,            KC_PAUS,    TG(NUMPAD), MO(PROGRAM),
+        KC_F9,              KC_F10,                 KC_F11,                 KC_F12,             KC_PSCR,                KC_SLCK,        KC_PAUS,    TG(NUMPAD), MO(PROGRAM),
         KC_6,               KC_7,                   KC_8,                   KC_9,               KC_0,                   TG(MOUSE),
         KC_J,               KC_L,                   KC_U,                   KC_Y,               KC_SCLN,                KC_MINS,
         KC_H,               KC_N,                   KC_E,                   KC_I,               KC_O,                   KC_QUOT,
@@ -38,186 +41,186 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [QWERTY] = LAYOUT(
         // left hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_E,               KC_R,                   KC_T,
-        KC_TRNS,            KC_TRNS,                KC_S,                   KC_D,               KC_F,                   KC_G,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                KC_E,               KC_R,                   KC_T,
+        _______,            _______,                KC_S,                   KC_D,               KC_F,                   KC_G,
+        _______,            _______,                _______,                _______,            _______,                _______,
+                            _______,                _______,                _______,            _______,
         // left thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                                            KC_TRNS,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,
+                                                    _______,                _______,
+                                                                            _______,
+                            _______,                _______,                _______,
 
         // right hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_Y,               KC_U,                   KC_I,                   KC_O,               KC_P,                   KC_TRNS,
-        KC_TRNS,            KC_J,                   KC_K,                   KC_L,               KC_SCLN,                KC_TRNS,
-        KC_N,               KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        KC_Y,               KC_U,                   KC_I,                   KC_O,               KC_P,                   _______,
+        _______,            KC_J,                   KC_K,                   KC_L,               KC_SCLN,                _______,
+        KC_N,               _______,                _______,                _______,            _______,                _______,
+                            _______,                _______,                _______,            _______,
         // right thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                    KC_TRNS,
-                                                    KC_TRNS,                KC_TRNS,            KC_TRNS
+                                                    _______,                _______,
+                                                    _______,
+                                                    _______,                _______,            _______
     ),
 
     [FKEYS] = LAYOUT(
         // left hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,            KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        _______,            KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+                            _______,                _______,                _______,            _______,
         // left thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                                            KC_TRNS,
-                            KC_TRNS,                LT(NKEYS,KC_TAB),     KC_TRNS,
+                                                    _______,                _______,
+                                                                            _______,
+                            _______,                LT(NKEYS,KC_TAB),       _______,
 
         // right hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_F6,              KC_F7,                  KC_F8,                  KC_F9,              KC_F10,                 KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        KC_F6,              KC_F7,                  KC_F8,                  KC_F9,              KC_F10,                 _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+                            _______,                _______,                _______,            _______,
         // right thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                    KC_TRNS,
-                                                    KC_TRNS,                LT(NKEYS,KC_ENT), KC_TRNS
+                                                    _______,                _______,
+                                                    _______,
+                                                    _______,                LT(NKEYS,KC_ENT), _______
     ),
 
 
     [NKEYS] = LAYOUT(
         // left hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,            KC_1,                   KC_2,                   KC_3,               KC_4,                   KC_5,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        _______,            KC_1,                   KC_2,                   KC_3,               KC_4,                   KC_5,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,
 
         // left thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                                            KC_TRNS,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,
+                                                    _______,                _______,
+                                                                            _______,
+                            _______,                _______,                _______,
 
         // right hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_6,               KC_7,                   KC_8,                   KC_9,               KC_0,                   KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        KC_6,               KC_7,                   KC_8,                   KC_9,               KC_0,                   _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,
 
         // right thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                    KC_TRNS,
-                                                    KC_TRNS,                KC_TRNS,            KC_TRNS
+                                                    _______,                _______,
+                                                    _______,
+                                                    _______,                _______,            _______
     ),
 
     [MOUSE] = LAYOUT(
         // left hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,           KC_TRNS,     KC_TRNS,    KC_TRNS,
-        TO(FKEYS),          KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_WH_U,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_WH_L,                KC_WH_D,            KC_WH_R,                KC_TRNS,
-        KC_LSFT,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,     _______,    _______,
+        TO(FKEYS),          _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                KC_WH_U,            _______,                _______,
+        _______,            _______,                KC_WH_L,                KC_WH_D,            KC_WH_R,                _______,
+        KC_LSFT,            _______,                _______,                _______,            _______,                _______,
+                            _______,                _______,                _______,            _______,
         // left thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                                            KC_TRNS,
-                            KC_ACL1,                KC_ACL0,                KC_TRNS,
+                                                    _______,                _______,
+                                                                            _______,
+                            KC_ACL1,                KC_ACL0,                _______,
 
         // right hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_MS_U,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_MS_L,                KC_MS_D,                KC_MS_R,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_RSFT,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                KC_MS_U,                _______,            _______,                _______,
+        _______,            KC_MS_L,                KC_MS_D,                KC_MS_R,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                KC_RSFT,
+                            _______,                _______,                _______,            _______,
         // right thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                    KC_TRNS,
-                                                    KC_TRNS,                KC_BTN2,            KC_BTN1
+                                                    _______,                _______,
+                                                    _______,
+                                                    _______,                KC_BTN2,            KC_BTN1
     ),
 
     [NUMPAD] = LAYOUT(
         // left hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
         TO(FKEYS),          KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,
-        KC_TRNS,            KC_TRNS,                LSFT(LGUI(KC_LBRC)),    KC_UP,              LSFT(LGUI(KC_RBRC)),    KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_LEFT,                KC_DOWN,            KC_RGHT,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-                            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,
+        _______,            _______,                LSFT(LGUI(KC_LBRC)),    KC_UP,              LSFT(LGUI(KC_RBRC)),    _______,
+        _______,            _______,                KC_LEFT,                KC_DOWN,            KC_RGHT,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+                            _______,                _______,                _______,            _______,
         // left thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                                            KC_TRNS,
-                            LSFT_T(KC_BSPC),        LT(NUMPAD,KC_TAB),      KC_TRNS,
+                                                    _______,                _______,
+                                                                            _______,
+                            LSFT_T(KC_BSPC),        LT(NUMPAD,KC_TAB),      _______,
 
         // right hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
         KC_F6,              KC_F7,                  KC_F8,                  KC_F9,              KC_F10,                 TO(MOUSE),
-        KC_NLCK,            KC_P7,                  KC_P8,                  KC_P9,              KC_PMNS,                KC_TRNS,
-        KC_BSPC,            KC_P4,                  KC_P5,                  KC_P6,              KC_PPLS,                KC_TRNS,
-        KC_TRNS,            KC_P1,                  KC_P2,                  KC_P3,              KC_PSLS,                KC_TRNS,
+        KC_NLCK,            KC_P7,                  KC_P8,                  KC_P9,              KC_PMNS,                _______,
+        KC_BSPC,            KC_P4,                  KC_P5,                  KC_P6,              KC_PPLS,                _______,
+        _______,            KC_P1,                  KC_P2,                  KC_P3,              KC_PSLS,                _______,
                             KC_PEQL,                KC_P0,                  KC_PDOT,            KC_PAST,
         // right thumb
-                                                    KC_TRNS,                KC_TRNS,
-                                                    KC_TRNS,
-                                                    KC_TRNS,                LT(NUMPAD,KC_ENT),  RSFT_T(KC_SPC)
+                                                    _______,                _______,
+                                                    _______,
+                                                    _______,                LT(NUMPAD,KC_ENT),  RSFT_T(KC_SPC)
     ),
 
     [FN] = LAYOUT(
         // left hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_GRV,             KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-                            KC_TRNS,                KC_BSLS,                KC_LEFT,            KC_RGHT,
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        KC_GRV,             _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+                            _______,                KC_BSLS,                KC_LEFT,            KC_RGHT,
         // left thumb
                                                     KC_RGUI,                KC_LALT,
                                                                             KC_LCTL,
-                            KC_BSPC,                KC_TAB,                 KC_TRNS,
+                            KC_BSPC,                KC_TAB,                 _______,
 
         // right hand
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_MUTE,                KC_VOLD,            KC_VOLU,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-        KC_TRNS,            KC_TRNS,                KC_TRNS,                KC_TRNS,            KC_TRNS,                KC_TRNS,
-                            KC_UP,                  KC_DOWN,                KC_LBRC,            KC_TRNS,
+        _______,            _______,                _______,                _______,            KC_MUTE,                KC_VOLD,        KC_VOLU,    _______,    _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+                            KC_UP,                  KC_DOWN,                KC_LBRC,            _______,
         // right thumb
                                                     KC_RALT,                KC_LGUI,
                                                     KC_RCTL,
-                                                    KC_TRNS,                KC_ENT,             KC_SPC
+                                                    _______,                KC_ENT,             KC_SPC
     ),
 
     [PROGRAM] = LAYOUT(
         // left hand
-        TO(COLEMAK),        KC_NO,                  KC_NO,                  TO(QWERTY),         KC_NO,                  KC_NO,              KC_NO,      KC_NO,      EEP_RST,
-        KC_NO,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,
-        KC_NO,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,
-        KC_NO,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,
-        KC_NO,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,
-                            KC_NO,                  KC_NO,                  KC_NO,              KC_NO,
+        TO(COLEMAK),        XXXXXXX,                XXXXXXX,                TO(QWERTY),         XXXXXXX,                XXXXXXX,        XXXXXXX,    XXXXXXX,    EEP_RST,
+        XXXXXXX,            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,
+        XXXXXXX,            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,
+        XXXXXXX,            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,
+        XXXXXXX,            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,
+                            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,
         // left thumb
-                                                    KC_NO,                  KC_NO,
-                                                                            KC_NO,
-                            KC_NO,                  KC_NO,                  KC_NO,
+                                                    XXXXXXX,                XXXXXXX,
+                                                                            XXXXXXX,
+                            XXXXXXX,                XXXXXXX,                XXXXXXX,
 
         // right hand
-        RESET,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,              KC_NO,      KC_NO,      KC_NO,
-        KC_NO,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,
-        KC_NO,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,
-        KC_NO,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,
-        KC_NO,              KC_NO,                  KC_NO,                  KC_NO,              KC_NO,                  KC_NO,
-                            KC_NO,                  KC_NO,                  KC_NO,              KC_NO,
+        RESET,              XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,        XXXXXXX,    XXXXXXX,    XXXXXXX,
+        XXXXXXX,            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,
+        XXXXXXX,            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,
+        XXXXXXX,            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,
+        XXXXXXX,            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,                XXXXXXX,
+                            XXXXXXX,                XXXXXXX,                XXXXXXX,            XXXXXXX,
         // right thumb
-                                                    KC_NO,                  KC_NO,
-                                                    KC_NO,
-                                                    KC_NO,                  KC_NO,              KC_NO
+                                                    XXXXXXX,                XXXXXXX,
+                                                    XXXXXXX,
+                                                    XXXXXXX,                XXXXXXX,            XXXXXXX
     )
 };
