@@ -5,18 +5,19 @@
 
 #define COLEMAK     0
 #define QWERTY      1
-#define FKEYS       2
-#define NKEYS       3
-#define MOUSE       4
-#define NUMPAD      5
-#define FN          6
-#define PROGRAM     7
+#define FLAYOUT     2
+#define FKEYS      3
+#define NKEYS       4
+#define MOUSE       5
+#define NUMPAD      6
+#define FN          7
+#define PROGRAM     8
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [COLEMAK] = LAYOUT(
         // left hand
         KC_ESC,             KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,          KC_F6,      KC_F7,      KC_F8,
-        TG(FKEYS),          KC_1,                   KC_2,                   KC_3,               KC_4,                   KC_5,
+        TG(FLAYOUT),        KC_1,                   KC_2,                   KC_3,               KC_4,                   KC_5,
         KC_EQL,             KC_Q,                   KC_W,                   KC_F,               KC_P,                   KC_G,
         KC_GRV,             KC_A,                   KC_R,                   KC_S,               KC_T,                   KC_D,
         KC_LSFT,            KC_Z,                   KC_X,                   KC_C,               KC_V,                   KC_B,
@@ -24,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left thumb
                                                     LGUI_T(KC_DEL),         LALT_T(KC_F11),
                                                                             LCTL_T(KC_HOME),
-                            LSFT_T(KC_BSPC),        LT(NUMPAD,KC_TAB),      LT(FN,KC_END),
+                            LSFT_T(KC_BSPC),        LT(FKEYS,KC_TAB),       LT(FN,KC_END),
 
         // right hand
         KC_F9,              KC_F10,                 KC_F11,                 KC_F12,             KC_PSCR,                KC_SLCK,        KC_PAUS,    TG(NUMPAD), MO(PROGRAM),
@@ -36,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right thumb
                                                     RALT_T(KC_F12),         RGUI_T(KC_ESC),
                                                     RCTL_T(KC_PGUP),
-                                                    LT(FN,KC_PGDN),         LT(NUMPAD,KC_ENT),  RSFT_T(KC_SPC)
+                                                    LT(FN,KC_PGDN),         LT(FKEYS,KC_ENT),   RSFT_T(KC_SPC)
     ),
 
     [QWERTY] = LAYOUT(
@@ -65,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     _______,                _______,            _______
     ),
 
-    [FKEYS] = LAYOUT(
+    [FLAYOUT] = LAYOUT(
         // left hand
         _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
         _______,            KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,
@@ -88,9 +89,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right thumb
                                                     _______,                _______,
                                                     _______,
-                                                    _______,                LT(NKEYS,KC_ENT), _______
+                                                    _______,                LT(NKEYS,KC_ENT),   _______
     ),
 
+    [FKEYS] = LAYOUT(
+        // left hand
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        _______,            KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+                            _______,                _______,                _______,            _______,
+        // left thumb
+                                                    _______,                _______,
+                                                                            _______,
+                            _______,                _______,                _______,
+
+        // right hand
+        _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
+        KC_F6,              KC_F7,                  KC_F8,                  KC_F9,              KC_F10,                 _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+        _______,            _______,                _______,                _______,            _______,                _______,
+                            _______,                _______,                _______,            _______,
+        // right thumb
+                                                    _______,                _______,
+                                                    _______,
+                                                    _______,                _______,            _______
+    ),
 
     [NKEYS] = LAYOUT(
         // left hand
@@ -99,8 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,            _______,                _______,                _______,            _______,                _______,
         _______,            _______,                _______,                _______,            _______,                _______,
         _______,            _______,                _______,                _______,            _______,                _______,
-        _______,            _______,                _______,                _______,
-
+                            _______,                _______,                _______,            _______,
         // left thumb
                                                     _______,                _______,
                                                                             _______,
@@ -112,8 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,            _______,                _______,                _______,            _______,                _______,
         _______,            _______,                _______,                _______,            _______,                _______,
         _______,            _______,                _______,                _______,            _______,                _______,
-        _______,            _______,                _______,                _______,
-
+                            _______,                _______,                _______,            _______,
         // right thumb
                                                     _______,                _______,
                                                     _______,
@@ -123,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MOUSE] = LAYOUT(
         // left hand
         _______,            _______,                _______,                _______,            _______,                _______,        _______,     _______,    _______,
-        TO(FKEYS),          _______,                _______,                _______,            _______,                _______,
+        TO(FLAYOUT),        _______,                _______,                _______,            _______,                _______,
         _______,            _______,                _______,                KC_WH_U,            _______,                _______,
         _______,            _______,                KC_WH_L,                KC_WH_D,            KC_WH_R,                _______,
         KC_LSFT,            _______,                _______,                _______,            _______,                _______,
@@ -149,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NUMPAD] = LAYOUT(
         // left hand
         _______,            _______,                _______,                _______,            _______,                _______,        _______,    _______,    _______,
-        TO(FKEYS),          KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,
+        TO(FLAYOUT),        KC_F1,                  KC_F2,                  KC_F3,              KC_F4,                  KC_F5,
         _______,            _______,                LSFT(LGUI(KC_LBRC)),    KC_UP,              LSFT(LGUI(KC_RBRC)),    _______,
         _______,            _______,                KC_LEFT,                KC_DOWN,            KC_RGHT,                _______,
         _______,            _______,                _______,                _______,            _______,                _______,
